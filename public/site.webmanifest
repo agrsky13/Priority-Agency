@@ -1,0 +1,84 @@
+{
+  "name": "Детективное агентство ВИДАЛЬ",
+  "short_name": "ВИДАЛЬ",
+  "description": "Профессиональные детективные услуги. Частные расследования, поиск людей, наблюдение 24/7",
+  "start_url": "/mobile.html",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#1f2937",
+  "orientation": "portrait-primary",
+  "categories": ["business", "professional", "detective"],
+  "lang": "ru",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Экстренный звонок",
+      "short_name": "Звонок",
+      "description": "Срочная консультация детектива",
+      "url": "tel:+79999999999",
+      "icons": [
+        {
+          "src": "/shortcut-phone.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "WhatsApp",
+      "short_name": "WhatsApp", 
+      "description": "Написать в WhatsApp",
+      "url": "https://wa.me/79999999999",
+      "icons": [
+        {
+          "src": "/shortcut-whatsapp.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Telegram",
+      "short_name": "Telegram",
+      "description": "Написать в Telegram",
+      "url": "https://t.me/detective_agency", 
+      "icons": [
+        {
+          "src": "/shortcut-telegram.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile-1.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-mobile-2.png", 
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+} 
