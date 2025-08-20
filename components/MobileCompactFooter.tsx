@@ -1,17 +1,17 @@
 export function MobileCompactFooter() {
   return (
     <footer className="bg-gradient-to-br from-black/40 to-gray-900/40 backdrop-blur-xl border-t border-white/20 py-8">
-      <div className="container mx-auto px-4">
+      <div className="container px-4">
         <div className="text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-blue-400/30 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">V</span>
             </div>
             <div>
-              <h3 className="text-base font-bold text-white tracking-wide">
+              <h3 className="text-base font-bold text-white tracking-wide text-left">
                 VIDAL AGENCY
               </h3>
-              <p className="text-gray-400 text-sm">Detective Services</p>
+              <p className="text-gray-400 text-sm text-left">Детективные услуги</p>
             </div>
           </div>
           

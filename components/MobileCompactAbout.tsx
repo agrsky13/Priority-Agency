@@ -50,7 +50,7 @@ export function MobileCompactAbout({ setCurrentPage: _ }: MobileCompactAboutProp
                 <div className="w-6 h-6 bg-gradient-to-br from-gray-600/40 to-gray-500/40 backdrop-blur-xl border border-gray-500/50 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-white text-sm">✓</span>
                 </div>
-                <span>95% успешно завершенных дел</span>
+                <span>100% результат по каждому делу</span>
               </li>
             </ul>
           </div>

@@ -60,7 +60,7 @@ export function MobileContact() {
         {/* Simple Form */}
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
           <h3 className="text-xl font-bold text-white mb-4 text-center">
-            Оставьте заявку
+            Получить бесплатную консультацию
           </h3>
           
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -103,7 +103,7 @@ export function MobileContact() {
               type="submit"
               className="w-full bg-gradient-to-r from-blue-600/80 to-cyan-600/80 hover:from-blue-500 hover:to-cyan-500 text-white px-6 py-3 rounded-xl transition-all duration-300 font-medium"
             >
-              Отправить заявку
+              Получить бесплатную консультацию
             </button>
           </form>
         </div>

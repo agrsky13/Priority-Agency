@@ -15,7 +15,7 @@ export function MobileCompactHeader({ currentPage, setCurrentPage }: MobileCompa
 
   return (
     <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-gray-950/50 border-b border-gray-700/50">
-      <nav className="container mx-auto px-4">
+      <nav className="container px-4">
         <div className="flex items-center justify-between h-14">
           {/* Beautiful Logo */}
           <div className="flex items-center">
@@ -27,10 +27,10 @@ export function MobileCompactHeader({ currentPage, setCurrentPage }: MobileCompa
                 <span className="text-white font-bold text-sm">V</span>
               </div>
               <div>
-                <h1 className="text-sm font-bold text-white tracking-wide">
+                <h1 className="text-sm font-bold text-white tracking-wide text-left">
                   VIDAL AGENCY
                 </h1>
-                <p className="text-gray-400 text-xs">Detective Services</p>
+                <p className="text-gray-400 text-xs text-left">Детективные услуги</p>
               </div>
             </button>
           </div>

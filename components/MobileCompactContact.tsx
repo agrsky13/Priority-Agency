@@ -64,7 +64,7 @@ export function MobileCompactContact({ setCurrentPage }: MobileCompactContactPro
         {/* Simple Form */}
         <div className="bg-gray-700/30 backdrop-blur-xl border border-gray-600/30 rounded-lg p-5">
           <h3 className="text-lg font-bold text-white mb-4 text-center">
-            Оставьте заявку
+            Получить бесплатную консультацию
           </h3>
           
           <form onSubmit={handleSubmit} className="space-y-3">
@@ -107,7 +107,7 @@ export function MobileCompactContact({ setCurrentPage }: MobileCompactContactPro
               type="submit"
               className="w-full bg-gradient-to-r from-gray-700/40 to-gray-600/40 text-white px-5 py-3 rounded-lg transition-all duration-300 font-medium text-sm"
             >
-              Отправить заявку
+              Получить бесплатную консультацию
             </button>
           </form>
         </div>
