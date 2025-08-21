@@ -1,10 +1,6 @@
 import { useState } from 'react';
 
-interface MobileCompactContactProps {
-  setCurrentPage: (page: string) => void;
-}
-
-export function MobileCompactContact({ setCurrentPage }: MobileCompactContactProps) {
+export function MobileCompactContact() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',

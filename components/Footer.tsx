@@ -143,7 +143,7 @@ export function Footer() {
         <div className="border-t border-neutral-400/10 pt-6 md:pt-8 mb-6 md:mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
             {[
-              { number: "1000+", label: "Часов слежки" },
+              { number: "1000+", label: "Часов наружного наблюдения" },
               {
                 number: "100%",
                 label: "результат",

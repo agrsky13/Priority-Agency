@@ -1,8 +1,4 @@
-interface MobileCompactAboutProps {
-  setCurrentPage: (page: string) => void;
-}
-
-export function MobileCompactAbout({ setCurrentPage: _ }: MobileCompactAboutProps) {
+export function MobileCompactAbout() {
   return (
     <section className="py-12 bg-gradient-to-br from-gray-950 to-gray-900 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">

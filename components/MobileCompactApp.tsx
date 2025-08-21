@@ -12,18 +12,18 @@ export default function MobileCompactApp() {
   const renderPage = () => {
     switch (currentPage) {
       case 'services':
-        return <MobileCompactServices setCurrentPage={setCurrentPage} />;
+        return <MobileCompactServices />;
       case 'about':
-        return <MobileCompactAbout setCurrentPage={setCurrentPage} />;
+        return <MobileCompactAbout />;
       case 'contact':
-        return <MobileCompactContact setCurrentPage={setCurrentPage} />;
+        return <MobileCompactContact />;
       default:
         return (
           <main>
             <MobileCompactHero />
-            <MobileCompactServices setCurrentPage={setCurrentPage} />
-            <MobileCompactAbout setCurrentPage={setCurrentPage} />
-            <MobileCompactContact setCurrentPage={setCurrentPage} />
+            <MobileCompactServices />
+            <MobileCompactAbout />
+            <MobileCompactContact />
           </main>
         );
     }

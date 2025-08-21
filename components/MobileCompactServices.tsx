@@ -1,8 +1,4 @@
-interface MobileCompactServicesProps {
-  setCurrentPage: (page: string) => void;
-}
-
-export function MobileCompactServices({ setCurrentPage }: MobileCompactServicesProps) {
+export function MobileCompactServices() {
   const services = [
     {
       title: "Частные расследования",

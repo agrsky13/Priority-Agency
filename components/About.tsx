@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export function About() {
   return (
     <section id="about" className="py-12 md:py-24 bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
