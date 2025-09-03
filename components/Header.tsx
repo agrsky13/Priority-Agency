@@ -43,7 +43,7 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
         ? 'backdrop-blur-xl bg-neutral-950/40 border-b border-neutral-400/20 shadow-2xl' 
         : 'backdrop-blur-xl bg-neutral-950/20 border-b border-neutral-400/10'
     }`}>
-      <nav className="container pl-0 pr-4 lg:pr-8">
+      <nav className="container pl-6 md:pl-0 pr-4 lg:pr-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center ml-0">
             <button 
@@ -55,7 +55,7 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
               }`}>
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-neutral-400/20 to-neutral-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-xs md:text-sm font-bold text-center leading-none ml-1">P</span>
+                    <span className="text-xs md:text-sm font-bold text-center leading-none">P</span>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
 
         {/* Enhanced Mobile Navigation */}
         <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="px-4 pt-4 pb-6 space-y-3 bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl border border-neutral-400/20 rounded-2xl mt-2 shadow-2xl m-4">
+          <div className="px-6 pt-4 pb-6 space-y-3 bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl border border-neutral-400/20 rounded-2xl mt-2 shadow-2xl mx-6 mb-4">
             
             {/* Mobile menu header */}
             <div className="text-center py-2 mb-4 border-b border-neutral-400/10">

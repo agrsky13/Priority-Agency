@@ -8,10 +8,10 @@ export function MobileCompactFooter() {
               <span className="text-white font-bold text-sm">V</span>
             </div>
             <div>
-              <h3 className="text-base font-bold text-white tracking-wide text-left">
+              <h3 className="text-base font-bold text-white tracking-wide text-center">
                 VIDAL AGENCY
               </h3>
-              <p className="text-gray-400 text-sm text-left">Детективные услуги</p>
+              <p className="text-gray-400 text-sm text-center">Детективные услуги</p>
             </div>
           </div>
           

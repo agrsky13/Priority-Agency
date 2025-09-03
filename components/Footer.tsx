@@ -10,7 +10,7 @@ export function Footer() {
       {/* Subtle texture */}
       <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 to-neutral-900"></div>
 
-      <div className="container pl-0 pr-4 relative z-10">
+      <div className="container pl-6 md:pl-0 pr-4 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
           {/* Brand */}
           <div className="sm:col-span-2">
@@ -170,7 +170,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-neutral-400/10 pt-6 md:pt-8 text-center">
+        <div className="border-t border-neutral-400/10 pt-6 md:pt-8 text-center px-6 md:px-0">
           <p className="text-neutral-500 mb-2 text-sm md:text-base">
             © 2024 PRIORITY AGENCY. Все права защищены.
           </p>
