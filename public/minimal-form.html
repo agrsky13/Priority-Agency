@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Priority Agency - Форма</title>
+</head>
+<body>
+    <h1>Priority Agency</h1>
+    <p>Детективные услуги</p>
+    
+    <!-- ТОЧНО ВАШ КОД ОТ FORMSPREE -->
+    <form action="https://formspree.io/f/xjkeplve" method="POST">
+        <label>
+            Имя:
+            <input type="text" name="name" required>
+        </label>
+        <br><br>
+        
+        <label>
+            Телефон:
+            <input type="tel" name="phone" required>
+        </label>
+        <br><br>
+        
+        <label>
+            Email:
+            <input type="email" name="email">
+        </label>
+        <br><br>
+        
+        <label>
+            Сообщение:
+            <textarea name="message"></textarea>
+        </label>
+        <br><br>
+        
+        <!-- Скрытые поля -->
+        <input type="hidden" name="_subject" value="Заявка от Priority Agency">
+        <input type="hidden" name="_replyto" value="priorityagency@proton.me">
+        
+        <button type="submit">Отправить</button>
+    </form>
+    
+    <hr>
+    <p>Если форма не работает:</p>
+    <p>📞 +7 (900) 138-57-80</p>
+    <p>✉️ priorityagency@proton.me</p>
+</body>
+</html>
