@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Контактная форма</title>
+</head>
+<body>
+    <h1>Связаться с Priority Agency</h1>
+    
+    <form action="https://formspree.io/f/xjkeplve" method="POST">
+        <p>
+            <label>Имя:</label><br>
+            <input type="text" name="name" required>
+        </p>
+        
+        <p>
+            <label>Телефон:</label><br>
+            <input type="tel" name="phone" required>
+        </p>
+        
+        <p>
+            <label>Сообщение:</label><br>
+            <textarea name="message" rows="4"></textarea>
+        </p>
+        
+        <p>
+            <input type="checkbox" name="consent" required>
+            <label>Согласие на обработку данных</label>
+        </p>
+        
+        <input type="hidden" name="_subject" value="Новая заявка">
+        <input type="hidden" name="_replyto" value="priorityagency@proton.me">
+        
+        <p>
+            <button type="submit">Отправить</button>
+        </p>
+    </form>
+    
+    <p>Если форма не работает, звоните: +7 (900) 138-57-80</p>
+</body>
+</html>
