@@ -50,26 +50,36 @@ export function getSavedSubmissions(): any[] {
 // Submit form to API
 export async function submitForm(formData: FormData): Promise<SubmissionResult> {
   try {
-    // Use Vercel API Routes
-    const apiUrl = '/api/contact';
-      
-    const response = await fetch(apiUrl, {
+    console.log('Submitting form:', formData);
+    
+    // Try direct Formspree submission first
+    const formspreeResponse = await fetch('https://formspree.io/f/xjkeplve', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        message: formData.message || '',
+        _subject: `Новая заявка от ${formData.name}`,
+        _replyto: 'priorityagency@proton.me'
+      })
     });
 
-    const result = await response.json();
+    console.log('Formspree response:', formspreeResponse.status);
 
-    if (!response.ok) {
-      throw new Error(result.error || 'Server error');
+    if (formspreeResponse.ok) {
+      console.log('Form submitted successfully to Formspree');
+      return {
+        success: true,
+        message: 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.'
+      };
+    } else {
+      throw new Error('Formspree submission failed');
     }
-
-    return result;
   } catch (error) {
-    console.error('API submission failed:', error);
+    console.error('Form submission error:', error);
     
     // Fallback to localStorage
     saveToLocalStorage(formData);

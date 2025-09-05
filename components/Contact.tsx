@@ -13,11 +13,13 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submit clicked');
     setErrors([]);
     setIsSubmitting(true);
     
     // Validate form
     const validation = validateForm(formData);
+    console.log('Validation result:', validation);
     if (!validation.isValid) {
       setErrors(validation.errors);
       setIsSubmitting(false);
@@ -31,7 +33,9 @@ export function Contact() {
         phone: formatPhoneNumber(formData.phone)
       };
       
+      console.log('Sending formatted data:', formattedData);
       const result = await submitForm(formattedData);
+      console.log('Submit result:', result);
       
       if (result.success) {
         alert(result.message);
