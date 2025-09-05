@@ -11,17 +11,8 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/pages/api/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "/dist/$1"
     }
-  ],
-  "functions": {
-    "pages/api/contact.js": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }
