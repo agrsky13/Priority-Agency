@@ -50,10 +50,8 @@ export function getSavedSubmissions(): any[] {
 // Submit form to API
 export async function submitForm(formData: FormData): Promise<SubmissionResult> {
   try {
-    // Try Netlify Functions first, then fallback to static API
-    const apiUrl = window.location.hostname === 'localhost' 
-      ? '/api/contact' 
-      : '/.netlify/functions/contact';
+    // Use Vercel API Routes
+    const apiUrl = '/api/contact';
       
     const response = await fetch(apiUrl, {
       method: 'POST',
