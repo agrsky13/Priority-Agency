@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { submitForm, validateForm, formatPhoneNumber, FormData } from '../src/utils/formSubmission';
+
+interface FormData {
+  name: string;
+  phone: string;
+  message: string;
+  consent: boolean;
+}
 
 export function MobileContact() {
   const [formData, setFormData] = useState<FormData>({
@@ -8,42 +14,43 @@ export function MobileContact() {
     message: '',
     consent: false
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<string[]>([]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrors([]);
-    setIsSubmitting(true);
+    console.log('Mobile form submit clicked');
     
-    // Validate form
-    const validation = validateForm(formData);
-    if (!validation.isValid) {
-      setErrors(validation.errors);
-      setIsSubmitting(false);
+    // Simple validation
+    if (!formData.name || !formData.phone || !formData.consent) {
+      alert('Заполните все обязательные поля и дайте согласие на обработку данных');
       return;
     }
     
+    // Create form data for Formspree
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('message', formData.message || '');
+    formDataToSend.append('_subject', `Новая заявка от ${formData.name}`);
+    formDataToSend.append('_replyto', 'priorityagency@proton.me');
+    
     try {
-      // Format phone number
-      const formattedData = {
-        ...formData,
-        phone: formatPhoneNumber(formData.phone)
-      };
+      console.log('Sending to Formspree...');
+      const response = await fetch('https://formspree.io/f/xjkeplve', {
+        method: 'POST',
+        body: formDataToSend
+      });
       
-      const result = await submitForm(formattedData);
+      console.log('Response status:', response.status);
       
-      if (result.success) {
-        alert(result.message);
+      if (response.ok) {
+        alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
         setFormData({ name: '', phone: '', message: '', consent: false });
       } else {
-        setErrors([result.message || 'Произошла ошибка при отправке заявки']);
+        alert('Ошибка отправки. Попробуйте позже или позвоните нам.');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      setErrors(['Произошла ошибка при отправке заявки. Попробуйте позже.']);
-    } finally {
-      setIsSubmitting(false);
+      console.error('Error:', error);
+      alert('Ошибка отправки. Попробуйте позже или позвоните нам.');
     }
   };
 
@@ -149,27 +156,16 @@ export function MobileContact() {
               </label>
             </div>
 
-            {/* Error Messages */}
-            {errors.length > 0 && (
-              <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3">
-                <ul className="text-red-400 text-xs space-y-1">
-                  {errors.map((error, index) => (
-                    <li key={index}>• {error}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            
             <button
               type="submit"
-              disabled={!formData.consent || isSubmitting}
+              disabled={!formData.consent}
               className={`w-full px-6 py-3 rounded-xl transition-all duration-300 font-medium ${
-                formData.consent && !isSubmitting
+                formData.consent
                   ? 'bg-gradient-to-r from-blue-600/80 to-cyan-600/80 hover:from-blue-500 hover:to-cyan-500 text-white'
                   : 'bg-gray-600/50 cursor-not-allowed opacity-50 text-gray-400'
               }`}
             >
-              {isSubmitting ? 'Отправляем...' : 'Получить бесплатную консультацию'}
+              Получить бесплатную консультацию
             </button>
           </form>
         </div>

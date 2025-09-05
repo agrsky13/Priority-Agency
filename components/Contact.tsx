@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { submitForm, validateForm, formatPhoneNumber, FormData } from '../src/utils/formSubmission';
+
+interface FormData {
+  name: string;
+  phone: string;
+  message: string;
+  consent: boolean;
+}
 
 export function Contact() {
   const [formData, setFormData] = useState<FormData>({
@@ -8,46 +14,43 @@ export function Contact() {
     message: '',
     consent: false
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<string[]>([]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submit clicked');
-    setErrors([]);
-    setIsSubmitting(true);
     
-    // Validate form
-    const validation = validateForm(formData);
-    console.log('Validation result:', validation);
-    if (!validation.isValid) {
-      setErrors(validation.errors);
-      setIsSubmitting(false);
+    // Simple validation
+    if (!formData.name || !formData.phone || !formData.consent) {
+      alert('Заполните все обязательные поля и дайте согласие на обработку данных');
       return;
     }
     
+    // Create form data for Formspree
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('message', formData.message || '');
+    formDataToSend.append('_subject', `Новая заявка от ${formData.name}`);
+    formDataToSend.append('_replyto', 'priorityagency@proton.me');
+    
     try {
-      // Format phone number
-      const formattedData = {
-        ...formData,
-        phone: formatPhoneNumber(formData.phone)
-      };
+      console.log('Sending to Formspree...');
+      const response = await fetch('https://formspree.io/f/xjkeplve', {
+        method: 'POST',
+        body: formDataToSend
+      });
       
-      console.log('Sending formatted data:', formattedData);
-      const result = await submitForm(formattedData);
-      console.log('Submit result:', result);
+      console.log('Response status:', response.status);
       
-      if (result.success) {
-        alert(result.message);
+      if (response.ok) {
+        alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
         setFormData({ name: '', phone: '', message: '', consent: false });
       } else {
-        setErrors([result.message || 'Произошла ошибка при отправке заявки']);
+        alert('Ошибка отправки. Попробуйте позже или позвоните нам.');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      setErrors(['Произошла ошибка при отправке заявки. Попробуйте позже.']);
-    } finally {
-      setIsSubmitting(false);
+      console.error('Error:', error);
+      alert('Ошибка отправки. Попробуйте позже или позвоните нам.');
     }
   };
 
@@ -213,27 +216,17 @@ export function Contact() {
                 </label>
               </div>
 
-              {/* Error Messages */}
-              {errors.length > 0 && (
-                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
-                  <ul className="text-red-400 text-sm space-y-1">
-                    {errors.map((error, index) => (
-                      <li key={index}>• {error}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
               
               <button
                 type="submit"
-                disabled={!formData.consent || isSubmitting}
+                disabled={!formData.consent}
                 className={`w-full backdrop-blur-xl border border-neutral-400/30 text-neutral-300 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${
-                  formData.consent && !isSubmitting
+                  formData.consent
                     ? 'bg-gradient-to-r from-neutral-400/20 to-neutral-400/10 hover:from-neutral-400/30 hover:to-neutral-400/20 hover:scale-105' 
                     : 'bg-neutral-600/50 cursor-not-allowed opacity-50'
                 }`}
               >
-                {isSubmitting ? 'Отправляем...' : 'Получить бесплатную консультацию'}
+                Получить бесплатную консультацию
               </button>
             </form>
           </div>
