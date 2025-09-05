@@ -1,24 +1,50 @@
 import { useState } from 'react';
+import { submitForm, validateForm, formatPhoneNumber, FormData } from '../src/utils/formSubmission';
 
 export function Contact() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
     message: '',
     consent: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<string[]>([]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors([]);
+    setIsSubmitting(true);
     
-    if (!formData.consent) {
-      alert('Необходимо дать согласие на обработку персональных данных');
+    // Validate form
+    const validation = validateForm(formData);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      setIsSubmitting(false);
       return;
     }
     
-    console.log('Form submitted:', formData);
-    alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-    setFormData({ name: '', phone: '', message: '', consent: false });
+    try {
+      // Format phone number
+      const formattedData = {
+        ...formData,
+        phone: formatPhoneNumber(formData.phone)
+      };
+      
+      const result = await submitForm(formattedData);
+      
+      if (result.success) {
+        alert(result.message);
+        setFormData({ name: '', phone: '', message: '', consent: false });
+      } else {
+        setErrors([result.message || 'Произошла ошибка при отправке заявки']);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setErrors(['Произошла ошибка при отправке заявки. Попробуйте позже.']);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -182,17 +208,28 @@ export function Contact() {
                   </a>
                 </label>
               </div>
+
+              {/* Error Messages */}
+              {errors.length > 0 && (
+                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
+                  <ul className="text-red-400 text-sm space-y-1">
+                    {errors.map((error, index) => (
+                      <li key={index}>• {error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               
               <button
                 type="submit"
-                disabled={!formData.consent}
+                disabled={!formData.consent || isSubmitting}
                 className={`w-full backdrop-blur-xl border border-neutral-400/30 text-neutral-300 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${
-                  formData.consent 
+                  formData.consent && !isSubmitting
                     ? 'bg-gradient-to-r from-neutral-400/20 to-neutral-400/10 hover:from-neutral-400/30 hover:to-neutral-400/20 hover:scale-105' 
                     : 'bg-neutral-600/50 cursor-not-allowed opacity-50'
                 }`}
               >
-                Получить бесплатную консультацию
+                {isSubmitting ? 'Отправляем...' : 'Получить бесплатную консультацию'}
               </button>
             </form>
           </div>
