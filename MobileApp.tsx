@@ -6,6 +6,7 @@ import { About } from './components/About';
 import { MobileContact } from './components/MobileContact';
 import { Footer } from './components/Footer';
 import { BlogPage } from './components/BlogPage';
+import { CookieConsent } from './components/CookieConsent';
 
 export default function MobileApp() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -31,6 +32,7 @@ export default function MobileApp() {
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       {renderPage()}
       <Footer />
+      <CookieConsent />
     </div>
   );
 } 

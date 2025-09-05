@@ -6,6 +6,7 @@ import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { BlogPage } from './components/BlogPage';
+import { CookieConsent } from './components/CookieConsent';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -31,6 +32,7 @@ export default function App() {
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       {renderPage()}
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
