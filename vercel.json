@@ -20,11 +20,5 @@
       "destination": "/",
       "permanent": true
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
-    }
   ]
 }

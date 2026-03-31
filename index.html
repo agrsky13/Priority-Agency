@@ -25,11 +25,10 @@
               regs.forEach(function (r) { r.unregister(); });
             });
           }
+          /* Полная очистка Cache Storage: любой старый SW кэш ломал загрузку чанков после деплоя */
           if (typeof caches !== "undefined") {
             caches.keys().then(function (keys) {
-              keys.forEach(function (key) {
-                if (/priority|vidal|detective/i.test(key)) caches.delete(key);
-              });
+              keys.forEach(function (key) { caches.delete(key); });
             });
           }
         } catch (e) {}
