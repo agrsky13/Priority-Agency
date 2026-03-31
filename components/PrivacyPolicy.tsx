@@ -102,8 +102,8 @@ export function PrivacyPolicy({ onClose }: PrivacyPolicyProps) {
               </p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Email: priorityagency@proton.me</li>
-                <li>Телефон: +7 (900) 138-57-80</li>
-                <li>Telegram: @dtctv</li>
+                <li>Телефон: +7 999 898 14 39</li>
+                <li>Telegram: @priorityagencyru</li>
               </ul>
             </div>
 

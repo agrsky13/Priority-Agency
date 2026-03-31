@@ -32,53 +32,50 @@ export function Contact() {
             </div>
 
             {/* Contact Methods */}
-            <div className="space-y-4 md:space-y-6">
-              <h4 className="text-xl md:text-2xl font-bold text-neutral-300 mb-6">
-                Свяжитесь с нами
-              </h4>
-              
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {[
                 {
                   icon: "📞",
                   title: "Телефон",
-                  value: "+7 (900) 138-57-80",
-                  link: "tel:+79001385780",
-                  description: "работаем 24/7"
+                  value: "+7 999 898 14 39",
+                  link: "tel:+79998981439",
+                  description: "работаем 24/7",
+                  color: "from-blue-500/20 to-cyan-500/20"
                 },
                 {
                   icon: "✈️",
                   title: "Telegram",
-                  value: "@dtctv",
-                  link: "https://t.me/dtctv",
-                  description: "быстрая связь"
+                  value: "@priorityagencyru",
+                  link: "https://t.me/priorityagencyru",
+                  description: "быстрая связь",
+                  color: "from-purple-500/20 to-pink-500/20"
                 },
                 {
                   icon: "📱",
                   title: "WhatsApp",
-                  value: "+7 (900) 138-57-80",
-                  link: "https://wa.me/79001385780",
-                  description: "сообщения и звонки"
+                  value: "+7 999 898 14 39",
+                  link: "https://wa.me/79998981439",
+                  description: "сообщения и звонки",
+                  color: "from-green-500/20 to-emerald-500/20"
                 }
               ].map((contact, index) => (
                 <a
                   key={index}
                   href={contact.link}
-                  className="group bg-neutral-400/5 backdrop-blur-xl border border-neutral-400/10 rounded-xl md:rounded-2xl p-4 md:p-6 flex items-center space-x-4 md:space-x-6 hover:bg-neutral-400/10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-neutral-400/5 block"
+                  className={`group bg-gradient-to-br ${contact.color} backdrop-blur-xl border border-neutral-400/20 rounded-2xl p-6 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl hover:shadow-neutral-400/10 transition-all duration-300 hover:border-neutral-400/30`}
                 >
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                    <span className="text-lg md:text-2xl">{contact.icon}</span>
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                    <span className="text-3xl">{contact.icon}</span>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="font-bold text-neutral-300 mb-1 text-base md:text-lg">
-                      {contact.title}
-                    </h4>
-                    <p className="text-neutral-400 font-medium mb-1 text-sm md:text-base">
-                      {contact.value}
-                    </p>
-                    <p className="text-neutral-500 text-xs md:text-sm">
-                      {contact.description}
-                    </p>
-                  </div>
+                  <h4 className="font-bold text-neutral-300 mb-2 text-lg">
+                    {contact.title}
+                  </h4>
+                  <p className="text-neutral-400 font-medium mb-2 text-base">
+                    {contact.value}
+                  </p>
+                  <p className="text-neutral-500 text-sm">
+                    {contact.description}
+                  </p>
                 </a>
               ))}
             </div>

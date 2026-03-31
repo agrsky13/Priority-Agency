@@ -17,16 +17,16 @@ export function MobileCompactContact() {
         {/* Contact Methods */}
         <div className="grid grid-cols-2 gap-3 mb-8">
           <a 
-            href="tel:+79001385780"
+            href="tel:+79998981439"
             className="bg-gray-700/30 backdrop-blur-xl border border-gray-600/30 rounded-lg p-3 text-center hover:bg-gray-600/40 transition-all duration-300"
           >
             <div className="text-xl mb-1">📞</div>
             <div className="text-white font-medium text-sm">Позвонить</div>
-            <div className="text-gray-400 text-xs">+7 (900) 138-57-80</div>
+            <div className="text-gray-400 text-xs">+7 999 898 14 39</div>
           </a>
           
           <a 
-            href="https://wa.me/79001385780"
+            href="https://wa.me/79998981439"
             className="bg-gray-700/30 backdrop-blur-xl border border-gray-600/30 rounded-lg p-3 text-center hover:bg-gray-600/40 transition-all duration-300"
           >
             <div className="text-xl mb-1">💬</div>
@@ -36,7 +36,7 @@ export function MobileCompactContact() {
         </div>
 
         <div className="text-center text-gray-400 text-sm">
-          <p>✈️ <a href="https://t.me/dtctv" className="text-blue-400 hover:text-blue-300">@dtctv</a></p>
+          <p>✈️ <a href="https://t.me/priorityagencyru" className="text-blue-400 hover:text-blue-300">@priorityagencyru</a></p>
           <p>✉️ <a href="mailto:priorityagency@proton.me" className="text-blue-400 hover:text-blue-300">priorityagency@proton.me</a></p>
         </div>
       </div>

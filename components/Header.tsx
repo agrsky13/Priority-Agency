@@ -54,14 +54,12 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
                 scrolled ? 'shadow-neutral-500/20' : ''
               }`}>
                 <div className="w-full h-full flex items-center justify-center">
-                  <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-neutral-400/20 to-neutral-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-xs md:text-sm font-bold text-center leading-none">P</span>
-                  </div>
+                  <span className="text-base md:text-lg leading-none" aria-hidden="true">🕵️</span>
                 </div>
               </div>
               <div>
-                <h1 className="text-lg md:text-xl font-bold text-neutral-300 tracking-wide text-left">
-                  PRIORITY AGENCY
+                <h1 className="text-lg md:text-xl font-bold tracking-wide text-left">
+                  <span className="text-gold-shimmer">PRIORITY AGENCY</span>
                 </h1>
                 <p className="text-neutral-500 text-xs hidden sm:block text-left">Детективные услуги</p>
               </div>
@@ -182,14 +180,14 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
             <div className="pt-4 mt-4 border-t border-neutral-400/10">
               <div className="grid grid-cols-2 gap-3">
                 <a 
-                  href="tel:+79001385780"
+                  href="tel:+79998981439"
                   className="flex items-center justify-center px-3 py-3 bg-gradient-to-r from-neutral-600/80 to-neutral-700/80 text-neutral-300 rounded-xl hover:scale-105 transition-all duration-300 active:scale-95"
                 >
                   <span className="text-lg mr-2">📞</span>
                   <span className="font-medium">Звонок</span>
                 </a>
                 <a 
-                  href="https://wa.me/79001385780"
+                  href="https://wa.me/79998981439"
                   className="flex items-center justify-center px-3 py-3 bg-gradient-to-r from-neutral-600/80 to-neutral-700/80 text-neutral-300 rounded-xl hover:scale-105 transition-all duration-300 active:scale-95"
                 >
                   <span className="text-lg mr-2">💬</span>

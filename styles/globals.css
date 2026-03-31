@@ -232,6 +232,26 @@ html {
   .hover-lift:hover {
     transform: translateY(-5px);
   }
+
+  /* Gold shimmer for brand title */
+  .text-gold-shimmer {
+    /* Gold-ish gradient that moves horizontally */
+    background-image: linear-gradient(
+      90deg,
+      rgba(251, 191, 36, 1) 0%,
+      rgba(252, 211, 77, 1) 25%,
+      rgba(254, 243, 199, 1) 50%,
+      rgba(252, 211, 77, 1) 75%,
+      rgba(251, 191, 36, 1) 100%
+    );
+    background-size: 200% auto;
+    background-position: 0% 50%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: goldShimmer 2.6s linear infinite;
+    text-shadow: 0 0 16px rgba(251, 191, 36, 0.35);
+  }
 }
 
 @keyframes float {
@@ -265,9 +285,24 @@ html {
   }
 }
 
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 /* Smooth scrolling for anchor links */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gold-shimmer {
+    animation: none;
   }
 }

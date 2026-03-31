@@ -89,17 +89,17 @@ emailjs.init("YOUR_USER_ID");
 ```html
 <div style="text-align: center; padding: 50px;">
     <h2>Связаться с нами</h2>
-    <p>📞 <a href="tel:+79001385780">+7 (900) 138-57-80</a></p>
+    <p>📞 <a href="tel:+79998981439">+7 999 898 14 39</a></p>
     <p>✉️ <a href="mailto:priorityagency@proton.me">priorityagency@proton.me</a></p>
-    <p>✈️ <a href="https://t.me/dtctv">@dtctv</a></p>
+    <p>✈️ <a href="https://t.me/priorityagencyru">@priorityagencyru</a></p>
 </div>
 ```
 
 ## 📞 Контакты для тестирования
 
-- **Телефон:** +7 (900) 138-57-80
+- **Телефон:** +7 999 898 14 39
 - **Email:** priorityagency@proton.me
-- **Telegram:** @dtctv
+- **Telegram:** @priorityagencyru
 - **Formspree ID:** xjkeplve
 
 ## 🎯 Следующие шаги

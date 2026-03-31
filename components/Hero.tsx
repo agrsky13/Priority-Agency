@@ -23,18 +23,18 @@ export function Hero() {
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-300 leading-tight mb-6 md:mb-8 px-2">
-              PRIORITY AGENCY
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8 px-2">
+              <span className="text-gold-shimmer">PRIORITY AGENCY</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-400 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-              Более 1000 успешно закрытых дел. Работаем круглосуточно.
+              Сотни успешно закрытых дел. Работаем 24/7
             </p>
 
             <div className="mb-8 md:mb-12">
-              <blockquote className="text-lg md:text-2xl lg:text-3xl text-neutral-300 italic font-medium">
-                "Мы находим то, что другие упускают."
-              </blockquote>
+              <p className="text-lg md:text-2xl lg:text-3xl text-neutral-300 font-medium">
+                Мы находим то, что другие упускают
+              </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
@@ -51,7 +51,7 @@ export function Hero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-6xl px-4">
             {[
               { 
-                number: "1000+", 
+                number: "100+", 
                 label: "завершённых дел", 
                 description: "от поиска людей до корпоративных расследований",
                 color: "from-neutral-500/20 to-neutral-600/20" 

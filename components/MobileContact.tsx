@@ -16,23 +16,35 @@ export function MobileContact() {
         </div>
 
         {/* Contact Methods */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 gap-4 mb-8">
           <a 
-            href="tel:+79999999999"
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-center hover:bg-white/10 transition-all duration-300"
+            href="tel:+79998981439"
+            className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-white/20 rounded-2xl p-4 text-center hover:scale-105 hover:shadow-xl transition-all duration-300"
           >
-            <div className="text-2xl mb-2">📞</div>
-            <div className="text-white font-medium text-sm">Позвонить</div>
-            <div className="text-gray-400 text-xs">+7 (999) 999-99-99</div>
+            <div className="text-3xl mb-2">📞</div>
+            <div className="text-white font-bold text-lg mb-1">Телефон</div>
+            <div className="text-gray-300 font-medium mb-1">+7 999 898 14 39</div>
+            <div className="text-gray-400 text-sm">работаем 24/7</div>
           </a>
           
           <a 
-            href="https://wa.me/79999999999"
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-center hover:bg-white/10 transition-all duration-300"
+            href="https://wa.me/79998981439"
+            className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-white/20 rounded-2xl p-4 text-center hover:scale-105 hover:shadow-xl transition-all duration-300"
           >
-            <div className="text-2xl mb-2">💬</div>
-            <div className="text-white font-medium text-sm">WhatsApp</div>
-            <div className="text-gray-400 text-xs">Написать</div>
+            <div className="text-3xl mb-2">📱</div>
+            <div className="text-white font-bold text-lg mb-1">WhatsApp</div>
+            <div className="text-gray-300 font-medium mb-1">+7 999 898 14 39</div>
+            <div className="text-gray-400 text-sm">сообщения и звонки</div>
+          </a>
+
+          <a 
+            href="https://t.me/priorityagencyru"
+            className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-white/20 rounded-2xl p-4 text-center hover:scale-105 hover:shadow-xl transition-all duration-300"
+          >
+            <div className="text-3xl mb-2">✈️</div>
+            <div className="text-white font-bold text-lg mb-1">Telegram</div>
+            <div className="text-gray-300 font-medium mb-1">@priorityagencyru</div>
+            <div className="text-gray-400 text-sm">быстрая связь</div>
           </a>
         </div>
 

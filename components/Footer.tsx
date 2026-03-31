@@ -22,7 +22,7 @@ export function Footer() {
               </div>
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-left">
-                  PRIORITY AGENCY
+                  <span className="text-gold-shimmer">PRIORITY AGENCY</span>
                 </h3>
                 <p className="text-neutral-500 text-xs md:text-sm text-left">
                   Детективные услуги
@@ -38,19 +38,19 @@ export function Footer() {
 
             <div className="flex space-x-3 md:space-x-4">
               <a
-                href="tel:+79001385780"
+                href="tel:+79998981439"
                 className="w-8 h-8 md:w-10 md:h-10 bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 rounded-lg flex items-center justify-center hover:bg-neutral-400/20 transition-colors duration-200"
               >
                 <span className="text-sm md:text-lg">📞</span>
               </a>
               <a
-                href="https://t.me/dtctv"
+                href="https://t.me/priorityagencyru"
                 className="w-8 h-8 md:w-10 md:h-10 bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 rounded-lg flex items-center justify-center hover:bg-neutral-400/20 transition-colors duration-200"
               >
                 <span className="text-sm md:text-lg">✈️</span>
               </a>
               <a
-                href="https://wa.me/79001385780"
+                href="https://wa.me/79998981439"
                 className="w-8 h-8 md:w-10 md:h-10 bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 rounded-lg flex items-center justify-center hover:bg-neutral-400/20 transition-colors duration-200"
               >
                 <span className="text-sm md:text-lg">📱</span>
@@ -114,19 +114,19 @@ export function Footer() {
               <div className="flex items-center space-x-2 md:space-x-3">
                 <span className="text-neutral-500 text-sm md:text-base">📞</span>
                 <a
-                  href="tel:+79001385780"
+                  href="tel:+79998981439"
                   className="text-neutral-500 hover:text-neutral-400 transition-colors duration-200 text-xs md:text-sm"
                 >
-                  +7 (900) 138-57-80
+                  +7 999 898 14 39
                 </a>
               </div>
               <div className="flex items-center space-x-2 md:space-x-3">
                 <span className="text-neutral-500 text-sm md:text-base">✈️</span>
                 <a
-                  href="https://t.me/dtctv"
+                  href="https://t.me/priorityagencyru"
                   className="text-neutral-500 hover:text-neutral-400 transition-colors duration-200 text-xs md:text-sm"
                 >
-                  @dtctv
+                  @priorityagencyru
                 </a>
               </div>
               <div className="flex items-center space-x-2 md:space-x-3">
@@ -172,11 +172,25 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-neutral-400/10 pt-6 md:pt-8 text-center px-6 md:px-0">
           <p className="text-neutral-500 mb-2 text-sm md:text-base">
-            © 2024 PRIORITY AGENCY. Все права защищены.
+            © 2026 PRIORITY AGENCY. Все права защищены.
           </p>
           <p className="text-neutral-600 text-xs md:text-sm">
             Профессиональные услуги по слежке и сбору информации
           </p>
+
+          <div className="mt-4 pt-4 border-t border-neutral-400/10 max-w-3xl mx-auto">
+            <div className="text-neutral-600 text-xs md:text-sm leading-relaxed space-y-1">
+              <p>ИП Лукьяненко-Видаль Никита Фостенович</p>
+              <p>ИНН: 230603918797</p>
+              <p>ОГРНИП: 325237500369362</p>
+              <p>
+                Юридический адрес: 353600, Краснодарский край, Староминский р-н,
+                ст-ца Староминская, ул. Мира, д. 6
+              </p>
+              <p>Email: priorityagency@yandex.ru</p>
+              <p>Телефон: +7 999 898 14 39</p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
