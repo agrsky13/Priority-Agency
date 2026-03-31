@@ -11,6 +11,10 @@
   ],
   "routes": [
     {
+      "src": "/mobile",
+      "dest": "/mobile.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/dist/$1"
     }

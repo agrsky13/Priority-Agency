@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Чистый URL без .html (иначе /mobile даёт 404)
+[[redirects]]
+  from = "/mobile"
+  to = "/mobile.html"
+  status = 200
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
