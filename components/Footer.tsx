@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-neutral-950 text-neutral-300 py-8 md:py-16 relative overflow-hidden">
+    <footer className="bg-neutral-950 text-neutral-300 py-10 sm:py-12 md:py-16 relative overflow-hidden pb-[max(2.5rem,env(safe-area-inset-bottom))]">
       {/* Background pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-r from-neutral-400/6 to-neutral-500/6 rounded-full mix-blend-screen filter blur-xl animate-pulse"></div>
@@ -10,8 +10,8 @@ export function Footer() {
       {/* Subtle texture */}
       <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 to-neutral-900"></div>
 
-      <div className="container pl-6 md:pl-0 pr-4 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+      <div className="container pl-4 pr-4 sm:px-5 md:pl-0 relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 md:gap-8 mb-8 md:mb-12">
           {/* Brand */}
           <div className="sm:col-span-2">
             <div className="flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
@@ -177,13 +177,12 @@ export function Footer() {
           <p className="text-neutral-600 text-xs md:text-sm">
             Профессиональные услуги по слежке и сбору информации
           </p>
-          <p className="text-neutral-600 text-xs md:text-sm mt-2 max-w-xl mx-auto">
-            Сайт адаптирован для смартфонов: откройте ту же ссылку, что и на компьютере — интерфейс
-            подстроится под экран.
+          <p className="text-neutral-500 text-xs sm:text-sm mt-2 max-w-xl mx-auto leading-relaxed px-1">
+            Удобно с телефона: откройте ту же ссылку, что и на компьютере — вёрстка подстроится под экран.
           </p>
 
-          <div className="mt-4 pt-4 border-t border-neutral-400/10 max-w-3xl mx-auto">
-            <div className="text-neutral-600 text-xs md:text-sm leading-relaxed space-y-1">
+          <div className="mt-4 pt-4 border-t border-neutral-400/10 max-w-3xl mx-auto text-left sm:text-center">
+            <div className="text-neutral-500 text-[11px] sm:text-xs md:text-sm leading-relaxed space-y-1.5">
               <p>ИП Лукьяненко-Видаль Никита Фостенович</p>
               <p>ИНН: 230603918797</p>
               <p>ОГРНИП: 325237500369362</p>

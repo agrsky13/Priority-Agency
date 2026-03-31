@@ -38,13 +38,13 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 w-full z-50 pt-[env(safe-area-inset-top)] transition-all duration-300 ${
       scrolled 
-        ? 'backdrop-blur-xl bg-neutral-950/40 border-b border-neutral-400/20 shadow-2xl' 
-        : 'backdrop-blur-xl bg-neutral-950/20 border-b border-neutral-400/10'
+        ? 'backdrop-blur-xl bg-neutral-950/85 border-b border-neutral-400/20 shadow-2xl' 
+        : 'backdrop-blur-xl bg-neutral-950/70 border-b border-neutral-400/10'
     }`}>
-      <nav className="container pl-6 md:pl-0 pr-4 lg:pr-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <nav className="container pl-4 pr-3 sm:px-4 md:pl-0 lg:pr-8 max-w-7xl">
+        <div className="flex items-center justify-between min-h-[3.5rem] md:h-20 py-1 md:py-0">
           <div className="flex items-center ml-0">
             <button 
               onClick={() => handleNavigation('home')}
@@ -57,11 +57,11 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
                   <span className="text-base md:text-lg leading-none" aria-hidden="true">🕵️</span>
                 </div>
               </div>
-              <div>
-                <h1 className="text-lg md:text-xl font-bold tracking-wide text-left">
+              <div className="min-w-0">
+                <h1 className="text-sm leading-tight sm:text-lg md:text-xl font-bold tracking-wide text-left truncate max-w-[13rem] sm:max-w-none">
                   <span className="text-gold-shimmer">PRIORITY AGENCY</span>
                 </h1>
-                <p className="text-neutral-500 text-xs hidden sm:block text-left">Детективные услуги</p>
+                <p className="text-neutral-500 text-[10px] sm:text-xs mt-0.5 text-left hidden sm:block">Детективные услуги</p>
               </div>
             </button>
           </div>
@@ -116,63 +116,62 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
         </div>
 
         {/* Enhanced Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="px-6 pt-4 pb-6 space-y-3 bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl border border-neutral-400/20 rounded-2xl mt-2 shadow-2xl mx-6 mb-4">
+        <div className={`md:hidden relative z-50 transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[min(78vh,calc(100dvh-5rem))] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <div className="px-4 pt-3 pb-5 space-y-2 overflow-y-auto overscroll-contain max-h-[min(78vh,calc(100dvh-5rem))] bg-gradient-to-br from-neutral-900/98 to-neutral-800/95 backdrop-blur-xl border border-neutral-400/20 rounded-2xl mt-2 shadow-2xl mx-2 sm:mx-4 mb-3 touch-manipulation">
             
-            {/* Mobile menu header */}
-            <div className="text-center py-2 mb-4 border-b border-neutral-400/10">
-              <h3 className="text-neutral-300 font-semibold">Навигация</h3>
+            <div className="text-center py-1.5 mb-2 border-b border-neutral-400/10">
+              <h3 className="text-neutral-400 text-xs font-medium uppercase tracking-wider">Меню</h3>
             </div>
             
             <button 
               onClick={() => handleNavigation('home', 'services')}
-              className="flex items-center w-full text-left px-4 py-4 text-neutral-500 hover:text-neutral-300 hover:bg-gradient-to-r hover:from-neutral-500/20 hover:to-neutral-600/20 rounded-xl transition-all duration-300 text-base font-medium group border border-transparent hover:border-neutral-400/20"
+              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] text-neutral-300 hover:bg-white/5 rounded-xl transition-all duration-300 text-[15px] font-medium border border-transparent active:bg-white/10"
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-3 shrink-0">
                 <span className="text-lg font-bold text-center">P</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="font-semibold">Услуги</div>
-                <div className="text-xs text-neutral-500 group-hover:text-neutral-400">Детективные расследования</div>
+                <div className="text-xs text-neutral-500">Детективные расследования</div>
               </div>
             </button>
             
             <button 
               onClick={() => handleNavigation('home', 'about')}
-              className="flex items-center w-full text-left px-4 py-4 text-neutral-500 hover:text-neutral-300 hover:bg-gradient-to-r hover:from-neutral-500/20 hover:to-neutral-600/20 rounded-xl transition-all duration-300 text-base font-medium group border border-transparent hover:border-neutral-400/20"
+              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] text-neutral-300 hover:bg-white/5 rounded-xl transition-all duration-300 text-[15px] font-medium border border-transparent active:bg-white/10"
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-3 shrink-0">
                 <span className="text-lg">ℹ️</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="font-semibold">О нас</div>
-                <div className="text-xs text-neutral-500 group-hover:text-neutral-400">О детективном агентстве</div>
+                <div className="text-xs text-neutral-500">О детективном агентстве</div>
               </div>
             </button>
             
             <button 
               onClick={() => handleNavigation('blog')}
-              className="flex items-center w-full text-left px-4 py-4 text-neutral-500 hover:text-neutral-300 hover:bg-gradient-to-r hover:from-neutral-500/20 hover:to-neutral-600/20 rounded-xl transition-all duration-300 text-base font-medium group border border-transparent hover:border-neutral-400/20"
+              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] text-neutral-300 hover:bg-white/5 rounded-xl transition-all duration-300 text-[15px] font-medium border border-transparent active:bg-white/10"
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-3 shrink-0">
                 <span className="text-lg">📝</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="font-semibold">Блог</div>
-                <div className="text-xs text-neutral-500 group-hover:text-neutral-400">Полезные статьи</div>
+                <div className="text-xs text-neutral-500">Полезные статьи</div>
               </div>
             </button>
             
             <button 
               onClick={() => handleNavigation('home', 'contact')}
-              className="flex items-center w-full text-left px-4 py-4 bg-gradient-to-r from-neutral-600/20 to-neutral-700/20 text-neutral-300 hover:from-neutral-500/30 hover:to-neutral-600/30 rounded-xl transition-all duration-300 text-base font-medium group border border-neutral-500/30 hover:border-neutral-400/50"
+              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] bg-amber-500/15 text-amber-100 hover:bg-amber-500/25 rounded-xl transition-all duration-300 text-[15px] font-medium border border-amber-500/25 active:bg-amber-500/20"
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/50 to-neutral-600/50 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center mr-3 shrink-0">
                 <span className="text-lg">📞</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="font-semibold">Связаться</div>
-                <div className="text-xs text-neutral-300 group-hover:text-neutral-200">Срочная консультация</div>
+                <div className="text-xs text-amber-200/80">Срочная консультация</div>
               </div>
             </button>
 
@@ -181,17 +180,17 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
               <div className="grid grid-cols-2 gap-3">
                 <a 
                   href="tel:+79998981439"
-                  className="flex items-center justify-center px-3 py-3 bg-gradient-to-r from-neutral-600/80 to-neutral-700/80 text-neutral-300 rounded-xl hover:scale-105 transition-all duration-300 active:scale-95"
+                  className="touch-manipulation flex items-center justify-center gap-2 min-h-[48px] px-3 py-3 bg-neutral-700/90 text-neutral-100 rounded-xl active:scale-[0.98] transition-transform border border-neutral-500/30"
                 >
-                  <span className="text-lg mr-2">📞</span>
-                  <span className="font-medium">Звонок</span>
+                  <span className="text-lg" aria-hidden>📞</span>
+                  <span className="font-medium text-sm">Звонок</span>
                 </a>
                 <a 
                   href="https://wa.me/79998981439"
-                  className="flex items-center justify-center px-3 py-3 bg-gradient-to-r from-neutral-600/80 to-neutral-700/80 text-neutral-300 rounded-xl hover:scale-105 transition-all duration-300 active:scale-95"
+                  className="touch-manipulation flex items-center justify-center gap-2 min-h-[48px] px-3 py-3 bg-emerald-800/50 text-emerald-50 rounded-xl active:scale-[0.98] transition-transform border border-emerald-500/30"
                 >
-                  <span className="text-lg mr-2">💬</span>
-                  <span className="font-medium">WhatsApp</span>
+                  <span className="text-lg" aria-hidden>💬</span>
+                  <span className="font-medium text-sm">WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -201,8 +200,9 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
         {/* Mobile overlay */}
         {isOpen && (
           <div 
-            className="fixed inset-0 bg-neutral-950/50 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-neutral-950/60 backdrop-blur-sm z-30 md:hidden"
             onClick={() => setIsOpen(false)}
+            aria-hidden
           />
         )}
       </nav>
