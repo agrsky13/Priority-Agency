@@ -16,6 +16,25 @@
     <meta name="keywords" content="детектив, частный детектив, детективные услуги, расследование, поиск людей, сбор информации" />
   </head>
   <body>
+    <!-- Сброс SW/кэша до React: старый SW отдавал устаревший index.html с несуществующими /assets/*.js -->
+    <script>
+      (function () {
+        try {
+          if (typeof navigator !== "undefined" && "serviceWorker" in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function (regs) {
+              regs.forEach(function (r) { r.unregister(); });
+            });
+          }
+          if (typeof caches !== "undefined") {
+            caches.keys().then(function (keys) {
+              keys.forEach(function (key) {
+                if (/priority|vidal|detective/i.test(key)) caches.delete(key);
+              });
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
