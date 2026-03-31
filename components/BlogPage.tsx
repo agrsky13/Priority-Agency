@@ -12,14 +12,14 @@ interface ArticleProps {
 function Article1({ post, onBack }: ArticleProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24">
+      <div className="container mx-auto px-4 relative z-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <button onClick={onBack} className="text-neutral-400 hover:text-neutral-300 transition-colors duration-300 mb-8 flex items-center space-x-2">
             <span>←</span>
             <span>Вернуться к блогу</span>
           </button>
           
-          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-8">
+          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-4 sm:p-6 md:p-8">
             <div className="mb-6">
               <span className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-300 px-3 py-1 rounded-full text-xs font-medium mb-4">
                 {post.category}
@@ -79,14 +79,14 @@ function Article1({ post, onBack }: ArticleProps) {
 function Article2({ post, onBack }: ArticleProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24">
+      <div className="container mx-auto px-4 relative z-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <button onClick={onBack} className="text-neutral-400 hover:text-neutral-300 transition-colors duration-300 mb-8 flex items-center space-x-2">
             <span>←</span>
             <span>Вернуться к блогу</span>
           </button>
           
-          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-8">
+          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-4 sm:p-6 md:p-8">
             <div className="mb-6">
               <span className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-300 px-3 py-1 rounded-full text-xs font-medium mb-4">
                 {post.category}
@@ -146,14 +146,14 @@ function Article2({ post, onBack }: ArticleProps) {
 function Article3({ post, onBack }: ArticleProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24">
+      <div className="container mx-auto px-4 relative z-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <button onClick={onBack} className="text-neutral-400 hover:text-neutral-300 transition-colors duration-300 mb-8 flex items-center space-x-2">
             <span>←</span>
             <span>Вернуться к блогу</span>
           </button>
           
-          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-8">
+          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-4 sm:p-6 md:p-8">
             <div className="mb-6">
               <span className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-300 px-3 py-1 rounded-full text-xs font-medium mb-4">
                 {post.category}
@@ -213,14 +213,14 @@ function Article3({ post, onBack }: ArticleProps) {
 function Article4({ post, onBack }: ArticleProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24">
+      <div className="container mx-auto px-4 relative z-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <button onClick={onBack} className="text-neutral-400 hover:text-neutral-300 transition-colors duration-300 mb-8 flex items-center space-x-2">
             <span>←</span>
             <span>Вернуться к блогу</span>
           </button>
           
-          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-8">
+          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-4 sm:p-6 md:p-8">
             <div className="mb-6">
               <span className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-300 px-3 py-1 rounded-full text-xs font-medium mb-4">
                 {post.category}
@@ -283,14 +283,14 @@ function Article4({ post, onBack }: ArticleProps) {
 function Article5({ post, onBack }: ArticleProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24">
+      <div className="container mx-auto px-4 relative z-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <button onClick={onBack} className="text-neutral-400 hover:text-neutral-300 transition-colors duration-300 mb-8 flex items-center space-x-2">
             <span>←</span>
             <span>Вернуться к блогу</span>
           </button>
           
-          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-8">
+          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-4 sm:p-6 md:p-8">
             <div className="mb-6">
               <span className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-300 px-3 py-1 rounded-full text-xs font-medium mb-4">
                 {post.category}
@@ -350,14 +350,14 @@ function Article5({ post, onBack }: ArticleProps) {
 function Article6({ post, onBack }: ArticleProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24">
+      <div className="container mx-auto px-4 relative z-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <button onClick={onBack} className="text-neutral-400 hover:text-neutral-300 transition-colors duration-300 mb-8 flex items-center space-x-2">
             <span>←</span>
             <span>Вернуться к блогу</span>
           </button>
           
-          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-8">
+          <article className="bg-gradient-to-br from-neutral-700/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/10 rounded-3xl p-4 sm:p-6 md:p-8">
             <div className="mb-6">
               <span className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-300 px-3 py-1 rounded-full text-xs font-medium mb-4">
                 {post.category}
@@ -515,7 +515,7 @@ export function BlogPage({ setCurrentPage }: BlogPageProps) {
         <div className="absolute bottom-20 right-1/4 w-32 h-32 bg-gradient-to-r from-neutral-500/3 to-neutral-400/3 rounded-full mix-blend-screen filter blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-24">
+      <div className="container mx-auto px-4 relative z-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24">
         {/* Page Header */}
         <div className="text-center mb-16">
           <div className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-300 px-6 py-3 rounded-full text-sm font-medium mb-6">

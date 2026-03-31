@@ -10,9 +10,9 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, _res, next) => {
           const url = req.url ?? ''
+          // В проде /mobile редиректит на главную — в dev открываем тот же адаптивный сайт
           if (url === '/mobile' || url.startsWith('/mobile?')) {
-            req.url =
-              url === '/mobile' ? '/mobile.html' : '/mobile.html' + url.slice('/mobile'.length)
+            req.url = url === '/mobile' ? '/' : '/' + url.slice('/mobile'.length)
           }
           next()
         })

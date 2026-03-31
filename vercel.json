@@ -9,11 +9,19 @@
       }
     }
   ],
-  "routes": [
+  "redirects": [
     {
-      "src": "/mobile",
-      "dest": "/mobile.html"
+      "source": "/mobile",
+      "destination": "/",
+      "permanent": true
     },
+    {
+      "source": "/mobile.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "routes": [
     {
       "src": "/(.*)",
       "dest": "/dist/$1"

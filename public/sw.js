@@ -1,16 +1,15 @@
-const CACHE_NAME = 'vidal-detective-v1.1';
-const OFFLINE_URL = '/mobile.html';
+const CACHE_NAME = 'priority-agency-v2';
+const OFFLINE_URL = '/';
 
-// Resources to cache
+// Resources to cache (главная адаптивная версия)
 const urlsToCache = [
-  '/mobile.html',
-  '/src/mobile.tsx',
-  '/src/main.tsx',
-  '/styles/globals.css',
+  '/',
+  '/index.html',
+  '/favicon.png',
   '/icon-192x192.png',
   '/icon-512x512.png',
   '/apple-touch-icon.png',
-  // Add other critical resources
+  '/site.webmanifest'
 ];
 
 // Install event - cache resources
@@ -149,12 +148,12 @@ self.addEventListener('notificationclick', event => {
   if (event.action === 'call') {
     // Open phone dialer
     event.waitUntil(
-      clients.openWindow('tel:+79999999999')
+      clients.openWindow('tel:+79998981439')
     );
   } else {
     // Open the app
     event.waitUntil(
-      clients.openWindow('/mobile.html')
+      clients.openWindow('/')
     );
   }
 });

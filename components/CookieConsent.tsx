@@ -21,7 +21,7 @@ export function CookieConsent() {
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-neutral-900/95 backdrop-blur-xl border-t border-neutral-400/20 p-4 md:p-6">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-neutral-900/95 backdrop-blur-xl border-t border-neutral-400/20 p-4 md:p-6 pb-[max(1rem,env(safe-area-inset-bottom))]">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex-1">

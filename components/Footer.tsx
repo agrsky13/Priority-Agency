@@ -177,13 +177,9 @@ export function Footer() {
           <p className="text-neutral-600 text-xs md:text-sm">
             Профессиональные услуги по слежке и сбору информации
           </p>
-          <p className="text-neutral-600 text-xs md:text-sm mt-2">
-            <a
-              href="/mobile"
-              className="text-neutral-500 hover:text-neutral-400 underline underline-offset-2 transition-colors"
-            >
-              Мобильная версия сайта
-            </a>
+          <p className="text-neutral-600 text-xs md:text-sm mt-2 max-w-xl mx-auto">
+            Сайт адаптирован для смартфонов: откройте ту же ссылку, что и на компьютере — интерфейс
+            подстроится под экран.
           </p>
 
           <div className="mt-4 pt-4 border-t border-neutral-400/10 max-w-3xl mx-auto">

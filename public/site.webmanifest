@@ -1,12 +1,12 @@
 {
-  "name": "Детективное агентство ВИДАЛЬ",
-  "short_name": "ВИДАЛЬ",
+  "name": "PRIORITY AGENCY",
+  "short_name": "PRIORITY",
   "description": "Профессиональные детективные услуги. Частные расследования, поиск людей, наблюдение 24/7",
-  "start_url": "/mobile.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#1f2937",
   "theme_color": "#1f2937",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "categories": ["business", "professional", "detective"],
   "lang": "ru",
   "scope": "/",
@@ -34,7 +34,7 @@
       "name": "Экстренный звонок",
       "short_name": "Звонок",
       "description": "Срочная консультация детектива",
-      "url": "tel:+79999999999",
+      "url": "tel:+79998981439",
       "icons": [
         {
           "src": "/shortcut-phone.png",
@@ -46,7 +46,7 @@
       "name": "WhatsApp",
       "short_name": "WhatsApp", 
       "description": "Написать в WhatsApp",
-      "url": "https://wa.me/79999999999",
+      "url": "https://wa.me/79998981439",
       "icons": [
         {
           "src": "/shortcut-whatsapp.png",
@@ -58,7 +58,7 @@
       "name": "Telegram",
       "short_name": "Telegram",
       "description": "Написать в Telegram",
-      "url": "https://t.me/detective_agency", 
+      "url": "https://t.me/priorityagencyru", 
       "icons": [
         {
           "src": "/shortcut-telegram.png",

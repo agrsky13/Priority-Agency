@@ -5,11 +5,16 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Чистый URL без .html (иначе /mobile даёт 404)
+# Единая адаптивная версия: старые URL мобильной сборки ведут на главную
 [[redirects]]
   from = "/mobile"
-  to = "/mobile.html"
-  status = 200
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mobile.html"
+  to = "/"
+  status = 301
 
 [[redirects]]
   from = "/api/*"
