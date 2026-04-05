@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Header } from './components/Header';
 import { MobileHero } from './components/MobileHero';
 import { MobileServices } from './components/MobileServices';
+import { SuccessStories } from './components/SuccessStories';
 import { About } from './components/About';
 import { MobileContact } from './components/MobileContact';
 import { Footer } from './components/Footer';
@@ -20,6 +21,7 @@ export default function MobileApp() {
           <main>
             <MobileHero />
             <MobileServices />
+            <SuccessStories />
             <About />
             <MobileContact />
           </main>
@@ -28,7 +30,7 @@ export default function MobileApp() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100">
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       {renderPage()}
       <Footer />

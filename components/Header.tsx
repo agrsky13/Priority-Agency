@@ -23,7 +23,6 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
     setCurrentPage(page);
     setIsOpen(false);
     
-    // Scroll to section if on home page
     if (page === 'home' && sectionId) {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -32,175 +31,141 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
         }
       }, 100);
     } else if (page === 'home') {
-      // Прокручиваем в начало при переходе на главную
       window.scrollTo(0, 0);
     }
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 w-full z-50 pt-[env(safe-area-inset-top)] transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 w-full z-50 pt-[env(safe-area-inset-top)] transition-all duration-500 ${
       scrolled 
-        ? 'backdrop-blur-xl bg-neutral-950/85 border-b border-neutral-400/20 shadow-2xl' 
-        : 'backdrop-blur-xl bg-neutral-950/70 border-b border-neutral-400/10'
+        ? 'backdrop-blur-xl bg-neutral-950/90 border-b border-neutral-800/50 shadow-2xl shadow-black/20' 
+        : 'backdrop-blur-sm bg-transparent'
     }`}>
-      <nav className="container pl-4 pr-3 sm:px-4 md:pl-0 lg:pr-8 max-w-7xl">
-        <div className="flex items-center justify-between min-h-[3.5rem] md:h-20 py-1 md:py-0">
-          <div className="flex items-center ml-0">
-            <button 
-              onClick={() => handleNavigation('home')}
-              className="flex items-center space-x-2 md:space-x-3 hover:opacity-80 transition-opacity duration-300 group"
-            >
-              <div className={`w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-neutral-500/30 to-neutral-600/30 backdrop-blur-xl border border-neutral-400/30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg overflow-hidden ${
-                scrolled ? 'shadow-neutral-500/20' : ''
-              }`}>
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-base md:text-lg leading-none" aria-hidden="true">🕵️</span>
-                </div>
-              </div>
-              <div className="min-w-0">
-                <h1 className="text-sm leading-tight sm:text-lg md:text-xl font-bold tracking-wide text-left truncate max-w-[13rem] sm:max-w-none">
-                  <span className="text-gold-shimmer">PRIORITY AGENCY</span>
-                </h1>
-                <p className="text-neutral-500 text-[10px] sm:text-xs mt-0.5 text-left hidden sm:block">Детективные услуги</p>
-              </div>
-            </button>
-          </div>
+      <nav className="container px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <button 
+            onClick={() => handleNavigation('home')}
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity duration-300 group"
+          >
+            <div className={`w-10 h-10 bg-gradient-to-br from-amber-600/20 to-amber-700/10 backdrop-blur-xl border border-amber-500/30 rounded-lg flex items-center justify-center transition-all duration-300 ${
+              scrolled ? 'shadow-lg shadow-amber-900/10' : ''
+            }`}>
+              <span className="text-amber-500 font-bold text-lg">P</span>
+            </div>
+            <div className="hidden sm:block">
+              <h1 className="text-lg md:text-xl font-bold tracking-wider">
+                <span className="text-gold-shimmer">PRIORITY</span>
+              </h1>
+              <p className="text-neutral-500 text-[10px] tracking-[0.2em] uppercase -mt-0.5">Agency</p>
+            </div>
+          </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => handleNavigation('home', 'services')}
-              className="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-400/10 transition-all duration-300 relative group px-3 py-2 rounded-lg"
-            >
-              Услуги
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neutral-400 to-neutral-500 transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button 
-              onClick={() => handleNavigation('home', 'about')}
-              className="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-400/10 transition-all duration-300 relative group px-3 py-2 rounded-lg"
-            >
-              О нас
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neutral-400 to-neutral-500 transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button 
-              onClick={() => handleNavigation('blog')}
-              className={`transition-all duration-300 relative group px-3 py-2 rounded-lg ${
-                currentPage === 'blog' ? 'text-neutral-300 bg-neutral-400/10' : 'text-neutral-500 hover:text-neutral-300 hover:bg-neutral-400/10'
-              }`}
-            >
-              Блог
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neutral-400 to-neutral-500 transition-all duration-300 group-hover:w-full"></span>
-            </button>
+          <div className="hidden md:flex items-center gap-1">
+            {[
+              { label: 'Services', section: 'services' },
+              { label: 'About', section: 'about' },
+              { label: 'Success Stories', section: 'success' },
+              { label: 'Blog', page: 'blog' }
+            ].map((item) => (
+              <button 
+                key={item.label}
+                onClick={() => item.page ? handleNavigation(item.page) : handleNavigation('home', item.section)}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+                  item.page && currentPage === item.page 
+                    ? 'text-amber-500 bg-amber-500/10' 
+                    : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/50'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            
             <button 
               onClick={() => handleNavigation('home', 'contact')}
-              className="bg-gradient-to-r from-neutral-600/80 to-neutral-700/80 hover:from-neutral-500 hover:to-neutral-600 backdrop-blur-xl border border-neutral-500/30 px-6 py-3 rounded-xl text-neutral-300 transition-all duration-300 shadow-lg hover:shadow-neutral-500/25 hover:scale-105"
+              className="ml-3 bg-gradient-to-r from-amber-600/90 to-amber-700/80 hover:from-amber-500 hover:to-amber-600 text-neutral-950 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg shadow-amber-900/20 hover:shadow-amber-800/30"
             >
-              Связаться
+              Contact
             </button>
           </div>
 
-          {/* Enhanced Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-neutral-500 hover:text-neutral-300 p-3 transition-colors duration-200 relative z-50 rounded-xl hover:bg-neutral-400/10 active:scale-95"
-              aria-label="Toggle menu"
-            >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : '-translate-y-1.5'}`}></span>
-                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1.5'}`}></span>
-              </div>
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-neutral-400 hover:text-neutral-200 p-2 rounded-lg hover:bg-neutral-800/50 transition-all duration-200"
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 h-6 flex flex-col justify-center items-center gap-1.5">
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </div>
+          </button>
         </div>
 
-        {/* Enhanced Mobile Navigation */}
-        <div className={`md:hidden relative z-50 transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[min(78vh,calc(100dvh-5rem))] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="px-4 pt-3 pb-5 space-y-2 overflow-y-auto overscroll-contain max-h-[min(78vh,calc(100dvh-5rem))] bg-gradient-to-br from-neutral-900/98 to-neutral-800/95 backdrop-blur-xl border border-neutral-400/20 rounded-2xl mt-2 shadow-2xl mx-2 sm:mx-4 mb-3 touch-manipulation">
+        {/* Mobile Navigation */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="py-4 space-y-1 border-t border-neutral-800/50">
+            {[
+              { label: 'Services', section: 'services', icon: (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              )},
+              { label: 'About', section: 'about', icon: (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )},
+              { label: 'Success Stories', section: 'success', icon: (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              )},
+              { label: 'Blog', page: 'blog', icon: (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15" />
+                </svg>
+              )}
+            ].map((item) => (
+              <button 
+                key={item.label}
+                onClick={() => item.page ? handleNavigation(item.page) : handleNavigation('home', item.section)}
+                className="flex items-center gap-3 w-full px-4 py-3 text-neutral-300 hover:text-neutral-100 hover:bg-neutral-800/50 rounded-lg transition-all duration-200"
+              >
+                <span className="text-neutral-500">{item.icon}</span>
+                <span className="font-medium">{item.label}</span>
+              </button>
+            ))}
             
-            <div className="text-center py-1.5 mb-2 border-b border-neutral-400/10">
-              <h3 className="text-neutral-400 text-xs font-medium uppercase tracking-wider">Меню</h3>
-            </div>
-            
-            <button 
-              onClick={() => handleNavigation('home', 'services')}
-              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] text-neutral-300 hover:bg-white/5 rounded-xl transition-all duration-300 text-[15px] font-medium border border-transparent active:bg-white/10"
-            >
-              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-3 shrink-0">
-                <span className="text-lg font-bold text-center">P</span>
-              </div>
-              <div className="min-w-0">
-                <div className="font-semibold">Услуги</div>
-                <div className="text-xs text-neutral-500">Детективные расследования</div>
-              </div>
-            </button>
-            
-            <button 
-              onClick={() => handleNavigation('home', 'about')}
-              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] text-neutral-300 hover:bg-white/5 rounded-xl transition-all duration-300 text-[15px] font-medium border border-transparent active:bg-white/10"
-            >
-              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-3 shrink-0">
-                <span className="text-lg">ℹ️</span>
-              </div>
-              <div className="min-w-0">
-                <div className="font-semibold">О нас</div>
-                <div className="text-xs text-neutral-500">О детективном агентстве</div>
-              </div>
-            </button>
-            
-            <button 
-              onClick={() => handleNavigation('blog')}
-              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] text-neutral-300 hover:bg-white/5 rounded-xl transition-all duration-300 text-[15px] font-medium border border-transparent active:bg-white/10"
-            >
-              <div className="w-10 h-10 bg-gradient-to-r from-neutral-500/30 to-neutral-600/30 rounded-xl flex items-center justify-center mr-3 shrink-0">
-                <span className="text-lg">📝</span>
-              </div>
-              <div className="min-w-0">
-                <div className="font-semibold">Блог</div>
-                <div className="text-xs text-neutral-500">Полезные статьи</div>
-              </div>
-            </button>
-            
-            <button 
-              onClick={() => handleNavigation('home', 'contact')}
-              className="flex items-center w-full text-left px-3 py-3.5 min-h-[48px] bg-amber-500/15 text-amber-100 hover:bg-amber-500/25 rounded-xl transition-all duration-300 text-[15px] font-medium border border-amber-500/25 active:bg-amber-500/20"
-            >
-              <div className="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center mr-3 shrink-0">
-                <span className="text-lg">📞</span>
-              </div>
-              <div className="min-w-0">
-                <div className="font-semibold">Связаться</div>
-                <div className="text-xs text-amber-200/80">Срочная консультация</div>
-              </div>
-            </button>
-
-            {/* Quick actions */}
-            <div className="pt-4 mt-4 border-t border-neutral-400/10">
-              <div className="grid grid-cols-2 gap-3">
-                <a 
-                  href="tel:+79998981439"
-                  className="touch-manipulation flex items-center justify-center gap-2 min-h-[48px] px-3 py-3 bg-neutral-700/90 text-neutral-100 rounded-xl active:scale-[0.98] transition-transform border border-neutral-500/30"
-                >
-                  <span className="text-lg" aria-hidden>📞</span>
-                  <span className="font-medium text-sm">Звонок</span>
-                </a>
-                <a 
-                  href="https://wa.me/79998981439"
-                  className="touch-manipulation flex items-center justify-center gap-2 min-h-[48px] px-3 py-3 bg-emerald-800/50 text-emerald-50 rounded-xl active:scale-[0.98] transition-transform border border-emerald-500/30"
-                >
-                  <span className="text-lg" aria-hidden>💬</span>
-                  <span className="font-medium text-sm">WhatsApp</span>
-                </a>
-              </div>
+            <div className="pt-4 mt-4 border-t border-neutral-800/50 space-y-3 px-4">
+              <a 
+                href="tel:+79998981439"
+                className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-amber-600/90 to-amber-700/80 text-neutral-950 rounded-lg font-semibold"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Call Now</span>
+              </a>
+              <a 
+                href="https://wa.me/79998981439"
+                className="flex items-center justify-center gap-2 w-full py-3 bg-emerald-800/50 text-emerald-50 rounded-lg font-medium border border-emerald-600/30"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                <span>WhatsApp</span>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Mobile overlay */}
+        {/* Mobile Overlay */}
         {isOpen && (
           <div 
-            className="fixed inset-0 bg-neutral-950/60 backdrop-blur-sm z-30 md:hidden"
+            className="fixed inset-0 bg-neutral-950/60 backdrop-blur-sm z-[-1] md:hidden"
             onClick={() => setIsOpen(false)}
             aria-hidden
           />

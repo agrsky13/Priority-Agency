@@ -255,6 +255,39 @@ html {
     animation: goldShimmer 2.6s linear infinite;
     text-shadow: 0 0 16px rgba(251, 191, 36, 0.35);
   }
+
+  /* Elegant serif heading style */
+  .heading-serif {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  /* Subtle grid pattern overlay */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Mystery reveal animation */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealUp 0.8s ease forwards;
+  }
+
+  /* Accent line decoration */
+  .accent-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(251, 191, 36, 0.8) 0%, rgba(251, 191, 36, 0.1) 100%);
+  }
 }
 
 @keyframes float {
@@ -294,6 +327,13 @@ html {
   }
   100% {
     background-position: 200% 50%;
+  }
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

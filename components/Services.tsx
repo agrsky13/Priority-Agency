@@ -1,77 +1,141 @@
-
 export function Services() {
   const services = [
     {
-      title: "Частные расследования",
-      description: "Сбор доказательств, проверка информации, помощь в судебных делах.",
-      icon: "🔍"
+      title: "Private Investigations",
+      description: "Comprehensive evidence gathering, information verification, and support for legal proceedings with court-admissible documentation.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      )
     },
     {
-      title: "Выявление измены",
-      description: "Наблюдение, сбор доказательств и проверка фактов. Если есть сомнения в верности — мы поможем узнать правду.",
-      icon: "💔"
+      title: "Infidelity Investigations",
+      description: "Discreet surveillance and evidence collection. If you have doubts about a partner, we help uncover the truth with factual proof.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      )
     },
     {
-      title: "Поиск людей",
-      description: "Пропавшие родственники, свидетели, должники — находим быстро и эффективно.",
-      icon: "👥"
+      title: "Missing Persons",
+      description: "Locate missing family members, witnesses, or debtors. Our extensive network and methods ensure fast, effective results.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      )
     },
     {
-      title: "Корпоративные расследования",
-      description: "Выявление утечек, проверка сотрудников и партнёров, защита бизнеса.",
-      icon: "🏢"
+      title: "Corporate Investigations",
+      description: "Identify information leaks, vet employees and partners, and protect your business interests with thorough background checks.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      )
     },
     {
-      title: "Проверка информации",
-      description: "Документы, факты, личности — мы проверим всё, что вызывает сомнение.",
-      icon: "📋"
+      title: "Background Verification",
+      description: "Comprehensive checks on documents, facts, and identities. We verify everything that raises questions.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      )
     },
     {
-      title: "Раскрытие двойной жизни",
-      description: "Сбор фактов, если у близкого человека могут быть тайные отношения или скрытые связи.",
-      icon: "🎭"
+      title: "Surveillance Operations",
+      description: "Professional covert observation to document activities, relationships, and patterns with photographic and video evidence.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+      )
     }
   ];
 
   return (
-    <section id="services" className="py-12 sm:py-16 bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden">
-      {/* Subtle Background Elements */}
+    <section id="services" className="py-16 sm:py-20 md:py-28 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 relative overflow-hidden">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-20"></div>
+      
+      {/* Background Decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-1/4 w-32 h-32 bg-gradient-to-r from-neutral-400/5 to-neutral-500/5 rounded-full mix-blend-screen filter blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-32 h-32 bg-gradient-to-r from-neutral-500/3 to-neutral-400/3 rounded-full mix-blend-screen filter blur-3xl"></div>
+        <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-amber-900/5 to-neutral-800/5 rounded-full mix-blend-screen filter blur-[80px]"></div>
+        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-neutral-700/5 to-neutral-600/5 rounded-full mix-blend-screen filter blur-[80px]"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-5 relative z-10">
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-block bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 text-neutral-200 px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
-            Услуги
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-200 mb-2 sm:mb-4 px-1">
-            Наши услуги
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <span className="inline-block text-amber-500/80 text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
+            What We Do
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 mb-4 md:mb-6 tracking-tight">
+            Our Services
           </h2>
+          <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            Professional investigative solutions tailored to your needs. 
+            Every case is handled with precision, discretion, and integrity.
+          </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group bg-gradient-to-br from-neutral-700/35 to-neutral-600/25 backdrop-blur-xl border border-neutral-400/15 rounded-2xl p-5 sm:p-6 md:p-8 active:bg-neutral-500/10 md:hover:bg-neutral-400/10 transition-all duration-300 md:hover:shadow-xl shadow-md shadow-black/10 md:shadow-none md:hover:shadow-neutral-400/5 relative overflow-hidden h-full flex flex-col"
+              className="group relative bg-neutral-900/40 backdrop-blur-sm border border-neutral-800/40 rounded-xl p-6 sm:p-7 md:p-8 hover:border-amber-900/30 transition-all duration-500 hover:bg-neutral-900/70 overflow-hidden"
             >
-              <div className="text-center mb-3 sm:mb-4">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-neutral-400/10 backdrop-blur-xl border border-neutral-400/20 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl md:text-3xl">{service.icon}</span>
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-900/0 to-amber-800/0 group-hover:from-amber-900/5 group-hover:to-amber-800/10 transition-all duration-500 rounded-xl"></div>
+              
+              {/* Number Badge */}
+              <div className="absolute top-6 right-6 text-neutral-800 text-6xl font-bold opacity-50 group-hover:opacity-70 transition-opacity duration-300">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-neutral-800/50 border border-neutral-700/30 rounded-xl flex items-center justify-center mb-5 sm:mb-6 text-amber-500/70 group-hover:text-amber-500 group-hover:border-amber-900/30 transition-all duration-300">
+                  {service.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-neutral-200 mb-2 sm:mb-3 leading-snug">
+
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-100 mb-3 sm:mb-4 group-hover:text-amber-500/90 transition-colors duration-300">
                   {service.title}
                 </h3>
+                
+                {/* Description */}
+                <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-              
-              <p className="text-neutral-400 text-[14px] sm:text-sm md:text-base leading-relaxed text-center flex-grow">
-                {service.description}
-              </p>
+
+              {/* Bottom Accent */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-600/0 to-transparent group-hover:via-amber-600/50 transition-all duration-500"></div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-14 sm:mt-16 md:mt-20 text-center">
+          <p className="text-neutral-400 mb-6 text-base sm:text-lg">
+            Need a custom investigation solution?
+          </p>
+          <a 
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-transparent border border-neutral-700/50 hover:border-amber-600/50 text-neutral-300 hover:text-amber-500 px-8 py-4 rounded-lg transition-all duration-300 text-base font-medium"
+          >
+            <span>Discuss Your Case</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
