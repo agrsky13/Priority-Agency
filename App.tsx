@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
+import { SuccessStories } from './components/SuccessStories';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -20,6 +21,7 @@ export default function App() {
           <main>
             <Hero />
             <Services />
+            <SuccessStories />
             <About />
             <Contact />
           </main>
@@ -28,7 +30,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 overflow-x-hidden">
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       {renderPage()}
       <Footer />
