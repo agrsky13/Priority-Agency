@@ -15,6 +15,15 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [isOpen]);
+
   const handleNavigation = (page: string, sectionId?: string) => {
     setCurrentPage(page);
     setIsOpen(false);
@@ -49,7 +58,8 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
           <button
             type="button"
             onClick={() => handleNavigation('home')}
-            className="flex items-center gap-3 hover:opacity-90 transition-opacity duration-300 group"
+            aria-label="PRIORITY AGENCY — на главную"
+            className="flex items-center gap-2 sm:gap-3 min-w-0 shrink hover:opacity-90 transition-opacity duration-300 group"
           >
             <div
               className={`w-10 h-10 bg-gradient-to-br from-amber-600/20 to-amber-700/10 backdrop-blur-xl border border-amber-500/30 rounded-lg flex items-center justify-center transition-all duration-300 overflow-hidden ${
@@ -60,7 +70,7 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
                 🕵️
               </span>
             </div>
-            <div className="hidden sm:block text-left">
+            <div className="hidden sm:block text-left min-w-0">
               <h1 className="text-lg md:text-xl font-bold tracking-wider">
                 <span className="text-gold-shimmer">PRIORITY</span>
               </h1>
@@ -109,20 +119,30 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
             aria-label="Меню"
             aria-expanded={isOpen}
           >
-            <div className="w-6 h-6 flex flex-col justify-center items-center gap-1.5">
-              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            <div className="w-6 h-6 flex flex-col justify-center items-center gap-[5px]">
+              <span
+                className={`block w-6 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${
+                  isOpen ? 'rotate-45 translate-y-[7px]' : ''
+                }`}
+              />
+              <span className={`block w-6 h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'opacity-0 scale-0' : ''}`} />
+              <span
+                className={`block w-6 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${
+                  isOpen ? '-rotate-45 -translate-y-[7px]' : ''
+                }`}
+              />
             </div>
           </button>
         </div>
 
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
+          className={`md:hidden transition-all duration-300 ease-in-out ${
+            isOpen
+              ? 'max-h-[min(85dvh,calc(100dvh-4.5rem))] opacity-100 overflow-y-auto overscroll-contain'
+              : 'max-h-0 opacity-0 overflow-hidden'
           }`}
         >
-          <div className="py-4 space-y-1 border-t border-neutral-800/50">
+          <div className="py-3 sm:py-4 space-y-1 border-t border-neutral-800/50 pb-[max(0.75rem,env(safe-area-inset-bottom))] rounded-b-2xl bg-neutral-950/98 shadow-lg shadow-black/30">
             {[
               {
                 label: 'Услуги',

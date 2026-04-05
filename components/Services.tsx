@@ -96,20 +96,20 @@ export function Services() {
   return (
     <section id="services" className="py-16 sm:py-20 md:py-28 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-20" aria-hidden />
-      <div className="absolute inset-0" aria-hidden>
-        <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-amber-900/5 to-neutral-800/5 rounded-full mix-blend-screen filter blur-[80px]" />
-        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-neutral-700/5 to-neutral-600/5 rounded-full mix-blend-screen filter blur-[80px]" />
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+        <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-amber-900/8 to-transparent rounded-full filter blur-[80px] opacity-60" />
+        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-neutral-700/10 to-transparent rounded-full filter blur-[80px] opacity-50" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <span className="inline-block text-amber-500/80 text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
+      <div className="container mx-auto px-3 sm:px-6 relative z-10 min-w-0">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-1">
+          <span className="inline-block text-amber-500/80 text-[11px] sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4">
             Чем помогаем
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 mb-4 md:mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 mb-4 md:mb-6 tracking-tight text-balance">
             Наши услуги
           </h2>
-          <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-pretty">
             Профессиональные решения под ваш запрос: дискретность, законность и внимание к деталям.
           </p>
         </div>
@@ -118,24 +118,29 @@ export function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-neutral-900/40 backdrop-blur-sm border border-neutral-800/40 rounded-xl p-6 sm:p-7 md:p-8 hover:border-amber-900/30 transition-all duration-500 hover:bg-neutral-900/70 overflow-hidden"
+              className="group relative isolate bg-neutral-900/70 border border-neutral-800/60 rounded-xl p-6 sm:p-7 md:p-8 overflow-hidden transition-[background-color,border-color] duration-300 hover:bg-neutral-900 hover:border-amber-600/40"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-900/0 to-amber-800/0 group-hover:from-amber-900/5 group-hover:to-amber-800/10 transition-all duration-500 rounded-xl" aria-hidden />
-              <div className="absolute top-6 right-6 text-neutral-800 text-6xl font-bold opacity-50 group-hover:opacity-70 transition-opacity duration-300">
+              <div
+                className="absolute top-4 right-3 sm:top-6 sm:right-6 text-neutral-800 text-4xl sm:text-6xl font-bold opacity-40 sm:opacity-50 group-hover:opacity-55 sm:group-hover:opacity-65 transition-opacity duration-300 pointer-events-none select-none leading-none"
+                aria-hidden
+              >
                 {String(index + 1).padStart(2, '0')}
               </div>
 
-              <div className="relative z-10">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-neutral-800/50 border border-neutral-700/30 rounded-xl flex items-center justify-center mb-5 sm:mb-6 text-amber-500/70 group-hover:text-amber-500 group-hover:border-amber-900/30 transition-all duration-300">
+              <div className="relative z-10 min-w-0 pr-10 sm:pr-14">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-neutral-800/60 border border-neutral-700/40 rounded-xl flex items-center justify-center mb-5 sm:mb-6 text-amber-500/80 group-hover:text-amber-400 group-hover:border-amber-600/40 transition-[color,border-color] duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-100 mb-3 sm:mb-4 group-hover:text-amber-500/90 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-100 mb-3 sm:mb-4 group-hover:text-amber-500/90 transition-colors duration-300 text-pretty">
                   {service.title}
                 </h3>
                 <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">{service.description}</p>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-600/0 to-transparent group-hover:via-amber-600/50 transition-all duration-500" aria-hidden />
+              <div
+                className="absolute bottom-0 left-0 right-0 h-px bg-amber-500/0 group-hover:bg-amber-500/45 transition-colors duration-300"
+                aria-hidden
+              />
             </div>
           ))}
         </div>

@@ -9,7 +9,7 @@ export function Footer() {
 
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-800/80 to-transparent" aria-hidden />
 
-      <div className="container px-4 sm:px-6 relative z-10 max-w-7xl mx-auto">
+      <div className="container px-3 sm:px-6 relative z-10 max-w-7xl mx-auto min-w-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 lg:gap-12 mb-12 md:mb-16">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
@@ -180,9 +180,9 @@ export function Footer() {
               { number: '24/7', label: 'На связи' },
               { number: '100+', label: 'Завершённых дел' },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-amber-500/90 mb-1 tabular-nums">{stat.number}</div>
-                <div className="text-neutral-500 text-xs sm:text-sm">{stat.label}</div>
+              <div key={index} className="text-center min-w-0 px-1">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-amber-500/90 mb-1 tabular-nums">{stat.number}</div>
+                <div className="text-neutral-500 text-[11px] leading-tight sm:text-sm text-balance">{stat.label}</div>
               </div>
             ))}
           </div>

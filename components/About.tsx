@@ -52,21 +52,21 @@ export function About() {
         <div className="absolute bottom-1/3 right-0 w-96 h-96 bg-gradient-to-l from-neutral-800/10 to-transparent rounded-full filter blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-          <div className="order-2 lg:order-1">
-            <span className="inline-block text-amber-500/80 text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
+      <div className="container mx-auto px-3 sm:px-6 relative z-10 min-w-0">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
+          <div className="order-2 lg:order-1 min-w-0">
+            <span className="inline-block text-amber-500/80 text-[11px] sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4">
               О нас
             </span>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-100 mb-6 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-100 mb-6 tracking-tight leading-tight text-balance">
               Хотите знать правду?
               <span className="block text-neutral-400 text-2xl sm:text-3xl md:text-4xl font-light mt-2">
                 Мы даём факты
               </span>
             </h2>
 
-            <p className="text-neutral-300 text-base sm:text-lg leading-relaxed mb-6">
+            <p className="text-neutral-300 text-base sm:text-lg leading-relaxed mb-6 text-pretty">
               Мы аккуратно и незаметно фиксируем встречи, действия и контакты. Вы получаете фото- и видеоматериалы, чтобы
               опираться не на догадки, а на реальность.
             </p>
@@ -101,9 +101,9 @@ export function About() {
             </a>
           </div>
 
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              <div className="bg-neutral-900/60 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-8 sm:p-10 relative overflow-hidden">
+          <div className="order-1 lg:order-2 min-w-0">
+            <div className="relative flex flex-col sm:block">
+              <div className="bg-neutral-900/60 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-6 sm:p-8 md:p-10 relative overflow-hidden min-w-0">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600/80 via-amber-500/60 to-amber-600/80" aria-hidden />
 
                 <div className="w-16 h-16 bg-neutral-800/60 border border-neutral-700/40 rounded-xl flex items-center justify-center mb-6 text-amber-500/80">
@@ -137,8 +137,8 @@ export function About() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-amber-600/90 text-neutral-950 rounded-xl px-4 py-2 sm:px-6 sm:py-3 shadow-lg">
-                <span className="text-sm sm:text-base font-bold">Надёжный партнёр</span>
+              <div className="relative sm:absolute mt-4 sm:mt-0 left-auto right-0 sm:-bottom-6 sm:-right-6 inline-flex sm:block bg-amber-600/90 text-neutral-950 rounded-xl px-4 py-2 sm:px-6 sm:py-3 shadow-lg max-w-full">
+                <span className="text-sm sm:text-base font-bold text-center sm:text-left w-full">Надёжный партнёр</span>
               </div>
             </div>
           </div>

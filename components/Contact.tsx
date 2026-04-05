@@ -7,15 +7,15 @@ export function Contact() {
         <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-gradient-to-r from-neutral-700/8 to-neutral-600/5 rounded-full mix-blend-screen filter blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <span className="inline-block text-amber-500/80 text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
+      <div className="container mx-auto px-3 sm:px-6 relative z-10 min-w-0">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-1">
+          <span className="inline-block text-amber-500/80 text-[11px] sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4">
             Связь
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 mb-4 md:mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 mb-4 md:mb-6 tracking-tight text-balance">
             Контакты
           </h2>
-          <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-pretty">
             Нужны факты о человеке или ситуации? Соберём информацию дискретно. Первая консультация — бесплатно.
           </p>
         </div>
@@ -73,7 +73,7 @@ export function Contact() {
               <a
                 key={index}
                 href={contact.link}
-                className={`group relative bg-gradient-to-br ${contact.color} backdrop-blur-sm border border-neutral-800/50 rounded-xl p-6 sm:p-8 flex flex-col items-center text-center hover:border-neutral-700/50 transition-all duration-500 hover:scale-[1.02] overflow-hidden`}
+                className={`group relative bg-gradient-to-br ${contact.color} backdrop-blur-sm border border-neutral-800/50 rounded-xl p-5 sm:p-8 flex flex-col items-center text-center hover:border-neutral-700/50 transition-all duration-500 md:hover:scale-[1.02] overflow-hidden min-w-0`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/5 group-hover:to-white/0 transition-all duration-500 rounded-xl" aria-hidden />
                 <div className="relative w-16 h-16 bg-neutral-900/60 border border-neutral-800/50 rounded-xl flex items-center justify-center group-hover:border-neutral-700/60 transition-all duration-300 mb-5 text-neutral-400 group-hover:text-neutral-200">
@@ -91,11 +91,13 @@ export function Contact() {
             ))}
           </div>
 
-          <div className="bg-neutral-900/60 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-8 sm:p-10 md:p-12 text-center relative overflow-hidden">
+          <div className="bg-neutral-900/60 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-5 sm:p-8 md:p-12 text-center relative overflow-hidden min-w-0">
             <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" aria-hidden />
 
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-100 mb-4">Готовы к следующему шагу?</h3>
-            <p className="text-neutral-400 text-base sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            <h3 className="text-xl sm:text-3xl md:text-4xl font-bold text-neutral-100 mb-4 text-balance px-1">
+              Готовы к следующему шагу?
+            </h3>
+            <p className="text-neutral-400 text-sm sm:text-lg mb-6 sm:mb-8 max-w-xl mx-auto leading-relaxed text-pretty px-1">
               Расскажите ситуацию в общих чертах — подскажем формат работы и сроки без обязательств.
             </p>
 

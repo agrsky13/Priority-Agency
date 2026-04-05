@@ -81,15 +81,15 @@ export function SuccessStories() {
         <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-gradient-to-r from-neutral-800/10 to-transparent rounded-full filter blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <span className="inline-block text-amber-500/80 text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
+      <div className="container mx-auto px-3 sm:px-6 relative z-10 min-w-0">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-1">
+          <span className="inline-block text-amber-500/80 text-[11px] sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4">
             Практика
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 mb-4 md:mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 mb-4 md:mb-6 tracking-tight text-balance">
             Примеры результатов
           </h2>
-          <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-pretty">
             Каждое дело ведётся конфиденциально. Ниже — обобщённые сценарии без раскрытия личных данных.
           </p>
         </div>
@@ -98,7 +98,7 @@ export function SuccessStories() {
           {stories.map((story) => (
             <div
               key={story.id}
-              className="group relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-xl p-6 sm:p-8 hover:border-neutral-700/50 transition-all duration-500 hover:bg-neutral-900/80"
+              className="group relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-xl p-5 sm:p-8 hover:border-neutral-700/50 transition-all duration-500 hover:bg-neutral-900/80 min-w-0"
             >
               <div className="absolute left-0 top-6 bottom-6 w-0.5 bg-gradient-to-b from-amber-500/80 via-amber-600/40 to-transparent" aria-hidden />
 
@@ -116,19 +116,19 @@ export function SuccessStories() {
 
               <p className="text-neutral-400 text-sm sm:text-base leading-relaxed mb-5">{story.description}</p>
 
-              <div className="flex items-center gap-2 pt-4 border-t border-neutral-800/50">
-                <svg className="w-5 h-5 text-green-500/80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+              <div className="flex items-start gap-2 pt-4 border-t border-neutral-800/50">
+                <svg className="w-5 h-5 text-green-500/80 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-neutral-200 font-medium text-sm sm:text-base">{story.outcome}</span>
+                <span className="text-neutral-200 font-medium text-sm sm:text-base text-pretty min-w-0">{story.outcome}</span>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 sm:mt-20 text-center">
-          <div className="inline-flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 bg-neutral-900/60 backdrop-blur-sm border border-neutral-800/50 rounded-2xl sm:rounded-full px-6 py-3 max-w-2xl mx-auto">
-            <svg className="w-5 h-5 text-amber-500/70 shrink-0 mx-auto sm:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <div className="mt-16 sm:mt-20 text-center px-1">
+          <div className="inline-flex w-full max-w-2xl flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-2 sm:gap-3 bg-neutral-900/60 backdrop-blur-sm border border-neutral-800/50 rounded-2xl sm:rounded-full px-4 sm:px-6 py-3 mx-auto">
+            <svg className="w-5 h-5 text-amber-500/70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -136,7 +136,7 @@ export function SuccessStories() {
                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
               />
             </svg>
-            <span className="text-neutral-300 text-sm sm:text-base text-center sm:text-left">
+            <span className="text-neutral-300 text-sm sm:text-base text-pretty min-w-0">
               Детали публикуются только с согласия клиента. Имена и обстоятельства изменены для сохранения тайны.
             </span>
           </div>
